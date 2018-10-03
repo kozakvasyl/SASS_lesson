@@ -1,0 +1,29 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+    background-color: black;
+    font-family: $font;
+    color: green;
+}
+
+.header {
+    @include border();
+    h1 {
+        color: white;
+    }
+    .sub {
+        color: $blue;
+    }
+        span {
+            color: yellow;
+        }
+}
+
+.footer {
+    padding: $regular-size;
+    @include border(green);
+    h2 {
+        color: $red;
+    }
+}

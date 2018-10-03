@@ -4,10 +4,16 @@ var clean = require('gulp-clean');
 var browserSync = require('browser-sync').create();
 
 
-gulp.task('sass', function() {
-   return gulp.src('app/sass/**/*.sass')
-        .pipe(sass())
-        .pipe(gulp.dest('app/css'))
+// gulp.task('sass', function() {
+//    return gulp.src('app/sass/**/*.sass')
+//         .pipe(sass())
+//         .pipe(gulp.dest('app/css'))
+// });
+
+gulp.task('scss', function() {
+  return gulp.src('app/scss/**/*.scss')
+       .pipe(sass())
+       .pipe(gulp.dest('app/css'))
 });
 
 gulp.task('watch', function() {
@@ -32,10 +38,10 @@ gulp.task('clean', function () {
           .pipe(clean());
   });
   
-gulp.task('cleanSass', function () {
-      return gulp.src('dist/sass/**', {read: false})
+gulp.task('cleanScss', function () {
+      return gulp.src('dist/scss/**', {read: false})
           .pipe(clean());
   });
 
-gulp.task('default', ['sass', 'copy', 'clean', 'watch', 'serve']);
+gulp.task('default', ['scss', 'copy', 'clean', 'watch', 'serve']);
 

@@ -1,0 +1,3 @@
+@mixin border ($color: yellow) {
+    border: 1px solid $color;
+}
