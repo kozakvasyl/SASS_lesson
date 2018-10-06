@@ -1,25 +1,30 @@
+@charset "UTF-8";
 body {
   background-color: black;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #f9fcf9;
+  color: #035003;
   padding: 10px;
-  border: 1px solid yellow; }
+  border: 5px solid blue; }
+  body .link {
+    color: white;
+    text-decoration: none; }
+    body .link:hover {
+      color: #035003; }
+  body h1 {
+    font-size: 40px;
+    border: 1px solid yellow; }
+  body p, body .sucsess, body .warning, body .danger {
+    color: #b500fc;
+    text-align: justify;
+    text-transform: capitalize; }
+    body p:before, body .sucsess:before, body .warning:before, body .danger:before {
+      content: "я тутщось написав...)))";
+      color: grey; }
+  body .sucsess {
+    color: #2fff2f; }
+  body .warning {
+    color: #035003; }
+  body .danger {
+    color: #ff5100; }
 
-.header h1 {
-  color: #fcfcfc; }
-
-.header .sub {
-  color: #b500fc; }
-
-.header span {
-  color: #ffa600; }
-
-.footer {
-  padding: 10px;
-  border: 1px solid #f8027d; }
-  .footer h2 {
-    color: #fc0000; }
-
-@media only screen and (max-width: 1024px) {
-  body {
-    background-color: lightgoldenrodyellow; } }
+/*# sourceMappingURL=maps/style.css.map */

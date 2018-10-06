@@ -1,0 +1,55 @@
+@import 'variables';
+@import 'variablesB';
+@import 'mixins';
+
+body {
+    background-color: black;
+    font-family: $font;
+    color: $green;
+    padding: $regular-size;
+    @include border(5px, solid, blue);
+
+    .link {
+        color: white;
+        text-decoration: none;
+        &:hover {
+            color: $green;
+        }
+    }
+    h1 {
+        font-size: $regular-size*4;
+        @include border();
+    }
+
+    p {
+        color: $purple;
+        &:before {
+            #{$cont}: "я тут" + "щось написав...)))";
+            color: grey;
+        }
+        text: {
+            align: justify;
+            transform: capitalize;
+        }
+    }
+
+    .sucsess {
+        @extend p;
+        color: #2fff2f;
+    }
+    .warning {
+        @extend p;
+        color: $green;
+    }
+    .danger {
+        @extend p;
+        color: #ff5100;
+    }
+}
+
+
+
+
+
+
+

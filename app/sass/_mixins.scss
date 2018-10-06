@@ -1,0 +1,4 @@
+@mixin border ($size: 1px, $type:solid, $color: yellow) {
+    border: $size $type $color;
+}
+

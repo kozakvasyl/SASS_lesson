@@ -1,23 +1,19 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var clean = require('gulp-clean');
+var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
 
-
-// gulp.task('sass', function() {
-//    return gulp.src('app/sass/**/*.sass')
-//         .pipe(sass())
-//         .pipe(gulp.dest('app/css'))
-// });
-
-gulp.task('scss', function() {
-  return gulp.src('app/scss/**/*.scss')
-       .pipe(sass())
-       .pipe(gulp.dest('app/css'))
+gulp.task('sass', function() {
+  return gulp.src(['app/sass/**/*.scss', 'app/sass/**/*.sass'])
+      .pipe(sourcemaps.init())
+      .pipe(sass({outputStyle: 'extended'}).on('error', sass.logError))
+      .pipe(sourcemaps.write('./maps'))
+      .pipe(gulp.dest('app/css'))
 });
 
 gulp.task('watch', function() {
-    gulp.watch('app/**/*.scss', ['scss']);
+    gulp.watch(['app/**/*.scss', 'app/**/*.sass'], ['sass']);
 });
 
 gulp.task('serve', function() {
@@ -29,7 +25,7 @@ gulp.task('serve', function() {
   });
 
 gulp.task('copy', function() {
-      gulp.src('app/**/*.*')
+      gulp.src(['app/**/*.*', '!app/sass/**', '!app/css/maps/**'])
           .pipe(gulp.dest('dist'))
   });
   
@@ -37,11 +33,6 @@ gulp.task('clean', function () {
       return gulp.src('dist', {read: false})
           .pipe(clean());
   });
-  
-gulp.task('cleanScss', function () {
-      return gulp.src('dist/scss/**', {read: false})
-          .pipe(clean());
-  });
 
-gulp.task('default', ['scss', 'copy', 'clean', 'watch', 'serve']);
+gulp.task('default', ['sass', 'clean', 'copy', 'watch', 'serve']);
 
