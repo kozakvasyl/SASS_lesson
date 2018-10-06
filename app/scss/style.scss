@@ -4,26 +4,30 @@
 body {
     background-color: black;
     font-family: $font;
-    color: green;
+    color: #f9fcf9;
+    padding: $regular-size;
+    @include border();
 }
 
 .header {
-    @include border();
     h1 {
-        color: white;
+        color: #fcfcfc;
     }
     .sub {
         color: $blue;
     }
         span {
-            color: yellow;
+            color: #ffa600;
         }
 }
 
 .footer {
     padding: $regular-size;
-    @include border(green);
+    @include border(#f8027d);
     h2 {
         color: $red;
     }
 }
+
+
+

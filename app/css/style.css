@@ -1,19 +1,21 @@
 body {
   background-color: black;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: green; }
-
-.header {
+  color: #f9fcf9;
+  padding: 10px;
   border: 1px solid yellow; }
-  .header h1 {
-    color: white; }
-  .header .sub {
-    color: #0082fc; }
-  .header span {
-    color: yellow; }
+
+.header h1 {
+  color: #fcfcfc; }
+
+.header .sub {
+  color: #b500fc; }
+
+.header span {
+  color: #ffa600; }
 
 .footer {
   padding: 10px;
-  border: 1px solid green; }
+  border: 1px solid #f8027d; }
   .footer h2 {
     color: #fc0000; }
