@@ -20,7 +20,6 @@ gulp.task('serve', function() {
     browserSync.init({
       server: 'app'
     });
-  
     browserSync.watch('app/**/*.*').on('change', browserSync.reload);
   });
 
