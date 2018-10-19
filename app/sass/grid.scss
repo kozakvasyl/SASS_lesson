@@ -1,0 +1,21 @@
+@import 'variables';
+@import 'variablesB';
+@import 'mixins';
+
+$columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+
+@each $index in $columns {
+    .col-#{$index}-12 {
+        width: (100% / 12) * $index;
+    }
+}
+
+.row {
+    display: flex;
+}
+.first {
+    background: royalblue;
+}
+.second {
+    background: teal;
+}

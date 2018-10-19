@@ -3,11 +3,13 @@ var sass = require('gulp-sass');
 var clean = require('gulp-clean');
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function() {
   return gulp.src(['app/sass/**/*.scss', 'app/sass/**/*.sass'])
       .pipe(sourcemaps.init())
       .pipe(sass({outputStyle: 'extended'}).on('error', sass.logError))
+      .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
       .pipe(sourcemaps.write('./maps'))
       .pipe(gulp.dest('app/css'))
 });
